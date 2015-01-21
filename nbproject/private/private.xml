@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/routes.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/tests/ExampleTest.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/composer.json</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/tests/TestCase.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/vendor/phpunit/php-token-stream/tests/_fixture/issue30.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/controllers/HomeController.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/public/index.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/index.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/bootstrap/autoload.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/views/login.blade.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/views/users.blade.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/config/database.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/models/User.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/models/LoginModel.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/views/layout.blade.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/assets/css/bootsnip.css</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/controllers/LoginController.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/views/admin.blade.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/config/session.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/controllers/UsersController.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/controllers/BaseController.php</file>
+        <file>file:/opt/lampp/htdocs/laravel_muftbytes/app/views/header.blade.php</file>
+    </open-files>
+</project-private>
