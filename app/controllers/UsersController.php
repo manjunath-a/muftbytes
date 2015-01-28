@@ -44,7 +44,9 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+            $viewusage = LoginModel::viewUsage($id);
+            $user_name = DB::table('users')->select('user_name')->where('user_id',$id)->get();
+            return View::make('view_usage',array('header'=>'users','viewUsage'=>$viewusage,'count'=>count($viewusage),'user_name'=>$user_name))->with(array('title'=>'Users'));
 	}
 
 
@@ -56,7 +58,8 @@ class UsersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+            $user_details = LoginModel::getUserToEdit($id);
+            return View::make('edituser',array('header'=>'users','user_information'=>$user_details))->with(array('title'=>'Users'));
 	}
 
 
@@ -68,7 +71,16 @@ class UsersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+            if(Input::get('enableuser') != null)
+                $updateinfo['user_status'] = 1;
+            else 
+                $updateinfo['user_status'] = 0;
+            if(Input::get('enablerecharge') != null)
+                $updateinfo['recharge_status'] = 1;
+            else 
+                $updateinfo['recharge_status'] = 0;
+            LoginModel::updateUser($id,$updateinfo);
+            return Redirect::to('user');
 	}
 
 

@@ -17,7 +17,9 @@
                 <li <?php if($header == 'users')
                             echo 'class="active"';?>
                     ><a href="<?php echo URL::to('user');?>">Users</a></li>
-                <li><a href="#">Applications</a></li>
+                <li 
+                    <?php if($header == 'application')
+                            echo 'class="active"';?>><a href="<?php echo URL::to('application');?>">Applications</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Reports <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">

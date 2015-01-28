@@ -18,3 +18,23 @@ Route::post('login','LoginController@authenticate');
 Route::get('user',array('as'=>'users','uses'=>'UsersController@index'));
 
 Route::get('dashboard',array('as'=>'Dashboard','uses'=>'LoginController@store'));
+
+Route::get('edit/{id}',array('as'=>'edit_user','uses'=>'UsersController@edit'));
+
+//Route::get('destroy/{id}',array('as'=>'delete_user','uses'=>'UsersController@destroy'));
+
+Route::post('update/{id}',array('as'=>'update_user','uses'=>'UsersController@update'));
+
+Route::get('show/{id}',array('as'=>'view_usage','uses'=>'UsersController@show'));
+
+Route::get('application',array('as'=>'application_page','uses'=>'ApplicationController@index'));
+
+Route::get('addapplication',array('as'=>'insert_application','uses'=>'ApplicationController@create'));
+
+Route::post('storeapplication',array('as'=>'store_application','uses'=>'ApplicationController@store'));
+
+Route::get('getdescription/{url}',array('as'=>'appdescription','uses'=>'LoginController@show'));
+
+Route::get('editapplication/{id}',array('as' => 'edit_application','uses' => 'ApplicationController@edit'));
+
+Route::post('updateapplication',array('as'=>'update_application','uses'=>'ApplicationController@update'));

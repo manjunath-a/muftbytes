@@ -20,6 +20,7 @@ class LoginController extends \BaseController {
 	 */
 	public function create()
 	{
+            
            
 	}
 
@@ -32,7 +33,7 @@ class LoginController extends \BaseController {
 	public function store()
 	{
                 $user_information = Session::get('userinfo');
-		 if($user_information[0]->user_id == 1)
+		 if($user_information[0]->user_role == 1)
                 {
                     Session::put('username',$user_information[0]->user_name);
                     return  View::make('admin',array('header'=>'dashboard'))->with(array('title'=>'Dashboard'));
@@ -46,10 +47,17 @@ class LoginController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($url)
 	{
-           
-		
+            try{
+		$tags = get_meta_tags("http://".str_replace(" ","",$url));
+                echo $tags['description'];
+            }
+            catch(Exception $e)
+            {
+                echo "Sorry ..... No description available";
+            }
+                
 	}
 
 
