@@ -72,10 +72,34 @@ class ExampleTest extends TestCase {
         
         Public function testEditApplication()
         {
-            $crawler = $this->client->request('GET','editapplication/{id}');
+            $crawler = $this->client->request('GET','editapplication/4');
             $this->assertTrue($this->client->getResponse()->isOk());
         }
         
+        public function testUpdateApplication()
+        {
+            $crawler = $this->client->request('GET','editapplication/4');
+            $this->assertTrue($this->client->getResponse()->isOk());
+            $this->action('POST', 'ApplicationController@update',array('appname' => 'Quikr',
+                                                                      'appurl'=>'www.quikr.com',
+                                                                      'appdesc'=>'selling',
+                                                                      'image'=>'placeholder.png',
+                                                                      'data_cap'=>0,
+                                                                      'enable'=>1));
+            $this->assertFalse($this->client->getResponse()->isOk());
+        }
+        
+        public function testDeleteApplication()
+        {
+            $crawler = $this->client->request('GET','deleteapplication/7');
+            $this->assertFalse($this->client->getResponse()->isOk());   
+        }
+        
+        public function testRechargeList()
+        {
+            $crawler = $this->client->request('GET','rechargelist');
+            $this->assertTrue($this->client->getResponse()->isOk());
+        }
         
 
 }

@@ -19,21 +19,21 @@
             <td>
                 <div class="form-group">
                     <label for="appname">Name</label>
-                    {{ Form::text('appname',null, array('class' => 'form-control','id' => 'appname','placeholder' => 'Enter App Name')) }}
+                    {{ Form::text('appname',null, array('class' => 'form-control','id' => 'appname','placeholder' => 'Enter App Name','required')) }}
                 </div>
                 <div class="form-group">
                     <label for="appurl">Url</label>
-                    {{ Form::text('appurl',null, array('class' => 'form-control','id' => 'appurl','placeholder' => 'Enter app url excluding http://')) }}
+                    {{ Form::text('appurl',null, array('class' => 'form-control','id' => 'appurl','placeholder' => 'Enter app url excluding http://','required')) }}
                     <button type="button" id="desc" class="btn btn-success btn-xs">Get Description</button>
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    {{ Form::textarea('appdesc',null, array('class' => 'form-control','rows' => '3','id' => 'description','placeholder' => 'Enter the description'))}}
+                    {{ Form::textarea('appdesc',null, array('class' => 'form-control','rows' => '3','id' => 'description','placeholder' => 'Enter the description','required'))}}
                     <!--<textarea rows="4" cols="50" class="form-control" id="description" name="description" placeholder="Enter Description"></textarea> -->
                 </div>
                 <div class="form-group">
                     <label for="datacap">Data Cap</label>
-                    {{ Form::text('datacap',null, array('class' => 'form-control','id' => 'datacap','placeholder' => 'Data cap in kb')) }}
+                    {{ Form::text('datacap',null, array('class' => 'form-control','id' => 'datacap','placeholder' => 'Data cap in kb','required')) }}
                 </div>
                 <label for="enable">Enable Application</label><br>
                 {{ Form::checkbox('enable',null,true)}}

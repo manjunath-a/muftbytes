@@ -25,21 +25,31 @@
         <tbody>
                 @foreach($applicationDetails as $applicationDetailsValue)
                 <tr>
-                    <td><img src='<?php echo URL::to('/')."/app/uploads/".$applicationDetailsValue->icon; ?>' style='height: 70px;'></td>
+                    <td><img src='<?php echo URL::to('/')."/app/uploads/".$applicationDetailsValue->icon; ?>' style='height: 70px;width: 70px;'></td>
                     <!--<td><img src='<?php echo app_path()."/uploads/".$applicationDetailsValue->icon; ?>'></td>-->
                     <td>{{ $applicationDetailsValue->application_name }}</td>
                     <td>{{ $applicationDetailsValue->url }}</td>
-                    <td>{{ $applicationDetailsValue->description }}</td>
+                    <td><p style='text-align: left'>{{ $applicationDetailsValue->description }}<p></td>
                     @if($applicationDetailsValue->status == 1)
                     <td>Enabled</td>
                     @else
                     <td>Disabled</td>
                     @endif
                     <td>{{ HTML::linkRoute('edit_application','Edit',array($applicationDetailsValue->application_id))}}</td>
-                    <td>Delete</td>
+                    <td><a href='#' onclick="getConfirm(<?php echo $applicationDetailsValue->application_id;?>)">Delete</a></td>
                 </tr>
                 @endforeach
         </tbody>
     </table>
+    <script type='text/javascript'>
+        function getConfirm(id)
+        {
+                bootbox.confirm("Do you want to delete this app ?",function(res){
+                    if(res == true)
+                        window.location.href="<?php echo URL::to('deleteapplication')?>/"+id;
+                });
+                
+        }
+    </script>
 </div>
 @stop

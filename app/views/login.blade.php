@@ -1,22 +1,6 @@
 @extends('layout')
 @section('content')
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="{{ URL::to('/')}}"><img src="{{asset('assets/image/logo_blue.png')}}" style='height: 20px;'></a></li>
-                <li 
-                    <?php if($Head == 'Home')
-                            echo "class='active'";?>
-                    ><a href="{{ URL::to('/')}}">Head</a></li>
-                <li 
-                    <?php if($Head == 'Support')
-                            echo "class='active'";?>
-                    ><a href="{{ URL::to('/')}}">Support</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+@include('loginheader')
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">

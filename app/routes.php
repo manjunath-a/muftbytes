@@ -37,4 +37,8 @@ Route::get('getdescription/{url}',array('as'=>'appdescription','uses'=>'LoginCon
 
 Route::get('editapplication/{id}',array('as' => 'edit_application','uses' => 'ApplicationController@edit'));
 
-Route::post('updateapplication',array('as'=>'update_application','uses'=>'ApplicationController@update'));
+Route::post('updateapplication/{id}',array('as'=>'update_application','uses'=>'ApplicationController@update'));
+
+Route::get('deleteapplication/{id}',array('as'=>'delete_application','uses'=>'ApplicationController@destroy'));
+
+Route::get('rechargelist',array('as'=>'recharge_list','uses'=>'ReportController@index'));

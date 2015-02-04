@@ -89,7 +89,8 @@ class ApplicationController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-            return View::make('editapplication',array('header'=>'application',))->with(array('title'=>'Edit Applications'));
+            $edit_info = ApplicationModel::getApplicationDetailsToEdit($id);
+            return View::make('editapplication',array('header'=>'application','edit_info' => $edit_info))->with(array('title'=>'Edit Applications'));
 	}
 
 
@@ -101,7 +102,38 @@ class ApplicationController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+            $application_name = Input::get('appname');
+            if(Input::get('enable') == 'on')
+             $app_status = 1;
+            else
+                $app_status = 0;
+            try{
+                if (Input::hasFile('profile'))
+                    {
+                        $file = Input::file('profile');
+                        $filename = $file->getClientOriginalName();
+                        $file_expand = explode(".",$filename);
+                        $image_name = str_replace(" ","_", Input::get('appname')).".".$file_expand[1];
+                        $file->move(app_path()."/uploads/",$image_name);
+                    }
+                    else
+                        $image_name = Input::get('img');
+                        
+                }
+                catch(Exception $e)
+                {
+                    echo $e;
+                }
+                $update_info=array('application_name' => $application_name,
+                             'url' => Input::get('appurl'),
+                             'description' => Input::get('appdesc'),
+                             'icon' => $image_name,
+                             'data_cap' => Input::get('datacap'),
+                             'status' => $app_status,
+                             );
+                         ApplicationModel::updateApplicationDetails($update_info,$id);
+                         return Redirect::to('application');
+
 	}
 
 
@@ -113,7 +145,8 @@ class ApplicationController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+            ApplicationModel::deleteApplication($id);
+            return Redirect::to('application');
 	}
 
 
